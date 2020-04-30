@@ -1,0 +1,2 @@
+petstore:
+  host: "petstore.swagger.io/v2"
