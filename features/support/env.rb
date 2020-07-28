@@ -4,7 +4,7 @@ require 'rest-client'
 require 'config'
 require 'rspec/core'
 require 'rspec/expectations'
-require "rspec/json_expectations"
+require 'jsonpath'
 
 Selenium::WebDriver.logger.level = :error
 
