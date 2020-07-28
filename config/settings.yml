@@ -1,2 +1,5 @@
 petstore:
   host: "petstore.swagger.io/v2"
+
+caps:
+  binary: 'browsers/GoogleChromePortable'

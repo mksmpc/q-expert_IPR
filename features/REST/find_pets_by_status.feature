@@ -1,15 +1,28 @@
 # encoding: UTF-8
 # language: ru
 
+@rest
 Функционал: Получение списка животных по статусу
 
   Структура сценария: Получение списка животных по валидным статусам
-    Допустим Отправили GET запрос на /pet/findByStatus?status=<status>
+    Допустим Отправили GET на /pet/findByStatus?status=<status_value>
     Тогда Проверяем статус код == 200
-    И Проверяем, что в ответе присутствует поле "status" со значением "<status>"
+    И Парсим ответ в JSON
+    И Проверяем, что в каждом элементе присутствует поле "status" со значением "<status_value>"
     Примеры:
-      | status    |
-      | available |
-      | pending   |
-      | sold      |
+      | status_value |
+      | available    |
+      | pending      |
+      | sold         |
 
+  Структура сценария: Получение пустого списка по невалидным запросам
+    Допустим Отправили GET на /pet/findByStatus<params>
+    И Парсим ответ в JSON
+    Тогда Проверяем, что JSON пуст
+    # В сваггере указано, что должен возвращаться 400 статус http://petstore.swagger.io/#/pet/findPetsByStatus
+    И Проверяем статус код == 400
+    Примеры:
+      | params    |
+      |           |
+      | ?status=  |
+      | ?status=x |

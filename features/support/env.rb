@@ -4,9 +4,14 @@ require 'rest-client'
 require 'config'
 require 'rspec/core'
 require 'rspec/expectations'
-require "rspec/json_expectations"
+require 'jsonpath'
+require 'page-object'
+require 'page-object/page_factory'
+
+World(PageObject::PageFactory)
 
 Selenium::WebDriver.logger.level = :error
+Selenium::WebDriver::Chrome.driver_path = "browsers/chromedriver.exe"
 
 env = ENV.fetch('ENV', 'LOCAL')
 puts "ENV = #{env}"
