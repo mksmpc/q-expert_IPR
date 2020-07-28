@@ -1,5 +1,5 @@
 When(/^Отправили (GET|POST|DELETE|PUT) на ([^"]*)$/) do |rest_method, urn|
-  url            = Settings.petstore.host + urn
+  url       = Settings.petstore.host + urn
   @response = send_rest(rest_method, url, headers: @headers_hash, payload: @payload)
 end
 
