@@ -1,2 +1,10 @@
 petstore:
   host: "petstore.swagger.io/v2"
+
+caps:
+  binary: 'browsers/GoogleChromePortable'
+
+timeouts:
+  implicit_wait: 10
+  script_timeout: 10
+  page_load: 15
