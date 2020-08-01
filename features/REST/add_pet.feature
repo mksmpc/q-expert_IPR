@@ -9,6 +9,8 @@
       | key          | value            |
       | Content-Type | application/json |
 
+    #TODO: Добавить генерацию имени животного
+  #TODO: Параметризировать генерацию JSON
   Структура сценария: Добавление животного и проверка ответа
     Допустим Указали содержимое файла add_pet/add_pet_<file> в качестве тела запроса
     И Отправили POST на /pet
@@ -26,3 +28,6 @@
       | file           | status_code | key     | value     |
       | bad_input.json | 400         | message | bad input |
       | blank.json     | 405         | message | no data   |
+
+    #TODO: Проверить через GET созданного животного
+  #TODO: Сверять все поля, которые приходят в ответ на запросы
