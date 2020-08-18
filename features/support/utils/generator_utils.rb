@@ -10,14 +10,18 @@ def generate_random_pet(params = nil)
       status:    random_status
   }
 
+  if params
     pet.merge! params
+  end
+
+  pet
 end
 
 def random_tags
   size = rand 10
   tags = Array.new(size)
   tags.map! do |tag|
-    tag =   {
+    tag = {
         id:   rand(99999),
         name: RandomWord.nouns.next
     }

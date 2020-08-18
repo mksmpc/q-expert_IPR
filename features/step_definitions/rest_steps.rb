@@ -21,3 +21,7 @@ end
 When(/^Указали содержимое файла (.*) в качестве тела запроса$/) do |file_path|
   @payload = File.read("files/#{file_path}")
 end
+
+When(/^Сравнили сгенерированные данные с данными с сервера$/) do
+  expect(@generated_data).to eq(JSON.parse(@response.body, :symbolize_names => true))
+end
