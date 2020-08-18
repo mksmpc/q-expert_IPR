@@ -11,6 +11,8 @@ require 'page-object/page_factory'
 
 require 'mysql2'
 
+require 'random-word'
+
 World(PageObject::PageFactory)
 
 Selenium::WebDriver.logger.level = :error

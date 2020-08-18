@@ -14,3 +14,5 @@ gem 'jsonpath'
 gem 'page-object'
 
 gem 'mysql2'
+
+gem 'random-word'

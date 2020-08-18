@@ -131,3 +131,4 @@ Gemfile.lock
 .rubocop-https?--*
 
 /report_files/*.png
+report.json

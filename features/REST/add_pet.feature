@@ -12,22 +12,20 @@
     #TODO: Добавить генерацию имени животного
   #TODO: Параметризировать генерацию JSON
   Структура сценария: Добавление животного и проверка ответа
-    Допустим Указали содержимое файла add_pet/add_pet_<file> в качестве тела запроса
+    Допустим Сгенерировали данные животного с параметрами
+      | key    | value   |
+      | status | <value> |
     И Отправили POST на /pet
     Тогда Проверяем статус код == <status_code>
     И Парсим ответ в JSON
     И Проверяем, что в ответе присутствует поле "<key>" со значением "<value>"
     @HP
     Примеры:
-      | file           | status_code | key    | value     |
-      | available.json | 200         | status | available |
-      | pending.json   | 200         | status | pending   |
-      | sold.json      | 200         | status | sold      |
-    @BP
-    Примеры:
-      | file           | status_code | key     | value     |
-      | bad_input.json | 400         | message | bad input |
-      | blank.json     | 405         | message | no data   |
+      | status_code | key    | value     |
+      | 200         | status | available |
+      | 200         | status | pending   |
+      | 200         | status | sold      |
+
 
     #TODO: Проверить через GET созданного животного
   #TODO: Сверять все поля, которые приходят в ответ на запросы

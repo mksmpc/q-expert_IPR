@@ -1,1 +1,1 @@
-default: --format json --out report_files/report_example.json
+default: --format json --out report.json
