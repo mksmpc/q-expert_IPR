@@ -1,12 +1,18 @@
-require 'selenium-webdriver'
 require 'cucumber'
 require 'rest-client'
 require 'config'
 require 'rspec/core'
 require 'rspec/expectations'
 require 'jsonpath'
+
+require 'selenium-webdriver'
 require 'page-object'
 require 'page-object/page_factory'
+
+require 'mysql2'
+
+require 'random-word'
+require 'i18n'
 
 World(PageObject::PageFactory)
 
