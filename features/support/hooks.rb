@@ -13,6 +13,8 @@ end
 
 
 Before() do |scenario|
+  @variables = {}
+
   @scenario_name = scenario.name
   @steps_counter = 0
   db_connect

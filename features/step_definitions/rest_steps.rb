@@ -4,10 +4,7 @@ When(/^Отправили (GET|POST|DELETE|PUT) на ([^"]*)$/) do |rest_method,
 end
 
 When(/^Добавили в Headers:$/) do |table|
-  table.hashes.each do |hash|
-    h = {hash[:key] => hash[:value]}
-    @headers_hash.merge!(h)
-  end
+    @headers_hash = table_to_hash table
 end
 
 Then(/^Проверяем статус код == ([^"]*)$/) do |status_code|
@@ -22,6 +19,10 @@ When(/^Указали содержимое файла (.*) в качестве �
   @payload = File.read("files/#{file_path}")
 end
 
-When(/^Сравнили сгенерированные данные с данными с сервера$/) do
+Then(/^Проверили, что сгенерированные данные и ответ с сервера равны$/) do
   expect(@generated_data).to eq(JSON.parse(@response.body, :symbolize_names => true))
+end
+
+When(/^Добавили сгенерированные данные в тело запроса$/) do
+  @payload = JSON.generate @generated_data
 end

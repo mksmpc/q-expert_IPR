@@ -12,6 +12,7 @@ require 'page-object/page_factory'
 require 'mysql2'
 
 require 'random-word'
+require 'i18n'
 
 World(PageObject::PageFactory)
 
